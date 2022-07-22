@@ -2,7 +2,6 @@ const userModel = require('../models/user.model')
 const cloudinary = require('cloudinary');
 const SECRET = process.env.JWT_SECRET;
 const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken')
 const hbs = require('nodemailer-express-handlebars')
 const nodemailer = require('nodemailer')
 const path = require('path')
