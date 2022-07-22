@@ -12,6 +12,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
 import Heropage from './Heropage'
+import Featured from './Featured'
 const LI = styled('li')({
   listStyleType: 'none',
   color: "white"
@@ -107,6 +108,7 @@ const LandingpageNav = () => {
        </Grid>
       </Grid>
       <Heropage/>
+      <Featured/>
     </>
   )
 }

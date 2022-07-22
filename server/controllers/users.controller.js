@@ -15,7 +15,7 @@ cloudinary.config({
 });
 
 
-const sendToken = () => {
+const sendToken = (req,res) => {
     const email = req.body.email
 
     console.log(req.body)
@@ -44,7 +44,8 @@ const sendToken = () => {
     transporter.use('compile', hbs(handlebarOptions))
     // Importing modules
 
-    const num = Math.floor(100000 + Math.random() * 900000);
+    // const num = Math.floor(100000 + Math.random() * 900000);
+    const num = Date.now()
     var mailOptions = {
         from: '"Joanna" <ladyj2183@gmail.com>', // sender address
         to: user.email, // list of receivers
