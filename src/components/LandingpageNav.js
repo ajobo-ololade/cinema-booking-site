@@ -11,6 +11,7 @@ import logo2 from '../assets/mobile.png'
 import MenuIcon from '@mui/icons-material/Menu';
 import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
+import Heropage from './Heropage'
 const LI = styled('li')({
   listStyleType: 'none',
   color: "white"
@@ -103,9 +104,9 @@ const LandingpageNav = () => {
               ))}
             </Menu>
           </Box>
-         
        </Grid>
       </Grid>
+      <Heropage/>
     </>
   )
 }
