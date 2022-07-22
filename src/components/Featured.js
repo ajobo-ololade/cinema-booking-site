@@ -1,46 +1,48 @@
 import React,{useEffect,useState} from 'react'
 import axios from 'axios'
-import Footer from './Footer'
-    //const [num, setnum] = useState(0)
-    const [allMovies, setallMovies] = useState([])
-    const [error, seterror] = useState("")
-    const url="https://imdb-api.com/en/API/MostPopularMovies/k_lv17lnyd"
-    // "https://imdb-api.com/en/API/FullCast/k_lv17lnyd/tt1375666"
-    // "https://imdb-api.com/en/API/Top250Movies/k_d6a0lkoi"
-    // "http://www.omdbapi.com/?i=tt3896198&apikey=c7e3c7b8"
-    // "https://imdb-api.com/en/API/Top250Movies/k_lv17lnyd"
-    const [isloading, setisloading] = useState(true)
+// import Footer from './Footer'
+import { TabContext, TabPanel, TabList } from '@mui/lab';
+import { Box, Container, Grid, Tab } from '@mui/material';
+import Card from './Card';
     
-    useEffect(()=>{
-        console.log("yoyoyo")
-        makeRequest()
-    },[])
-    
-    const makeRequest=()=>{
-        axios.get(url).then((res)=>{
-            if (res.status===200) {
-                
-           
-            console.log(res.data)
-            setallMovies(res.data.items) 
-            setisloading(false)
-                
-        }
-            else{
-                console.log("error ocurred")
-            }
-        }).catch((err)=>{
-            seterror(err)
-        })
-
-    }
 
 const Featured = () => {
-  return (
-   <>
-   
-   </>
-  )
+    const [value, setValue] = React.useState('1');
+
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
+  
+
+    
+
+    return (
+        <>
+            <Grid container sx={{display:'flex',justifyContent:'center',backgroundColor:'rgb(29,30,31)'}}>
+                <Grid item xs={12} md={10}>
+                    <Box >
+                        <TabContext value={value}>
+                            <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                                <TabList onChange={handleChange} aria-label="lab API tabs example">
+                                    <Tab label="Item One" value="1" sx={{ color: 'white' }} />
+                                    <Tab label="Item Two" value="2" sx={{ color: 'white' }} />
+                                    <Tab label="Item Three" value="3" sx={{ color: 'white' }} />
+                                </TabList>
+                            </Box>
+                            <TabPanel value="1">
+                                <Card />
+                            </TabPanel>
+                            <TabPanel value="2"><Card /></TabPanel>
+                            <TabPanel value="3"><Card /></TabPanel>
+                        </TabContext>
+                    </Box>
+                </Grid>
+            </Grid>
+
+
+
+        </>
+    );
 }
 
 export default Featured
