@@ -33,6 +33,10 @@ const userSchema = mongoose.Schema({
         type:Date,
         default:Date.now
 
+    },
+    package:{
+        require:true,
+        type:String,
     }
 
 
