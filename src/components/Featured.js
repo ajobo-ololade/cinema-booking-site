@@ -4,6 +4,7 @@ import axios from 'axios'
 import { TabContext, TabPanel, TabList } from '@mui/lab';
 import { Box, Container, Grid, Tab } from '@mui/material';
 import Card from './Card';
+import UpcomingCard from './UpcomingCard';
     
 
 const Featured = () => {
@@ -32,7 +33,7 @@ const Featured = () => {
                             <TabPanel value="1">
                                 <Card />
                             </TabPanel>
-                            <TabPanel value="2"><Card /></TabPanel>
+                            <TabPanel value="2"><UpcomingCard/></TabPanel>
                             <TabPanel value="3"><Card /></TabPanel>
                         </TabContext>
                     </Box>
