@@ -2,3 +2,15 @@
 .typo{
     font-family: 'Orbitron', sans-serif;
 }
+.tee{
+    background-image:
+    linear-gradient(
+      to right, 
+      /* #fffdc2,
+      #fffdc2 15%,
+      #d7f0a2 15%,
+      #d7f0a2 85%,
+      #fffdc2 85% */
+      black, rgb(29,39,31)
+    );
+}
