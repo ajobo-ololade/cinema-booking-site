@@ -70,7 +70,7 @@ const PagesdropDown = () => {
                 disableElevation
                 onClick={handleClick}
                 endIcon={<KeyboardArrowDownIcon />}
-                sx={{backgroundColor:'rgb(29,30,31)',textTransform:"none"}}
+                sx={{backgroundColor:'rgb(29,30,31)',textTransform:"none",'&:hover':{backgroundColor:'rgb(29,30,31)'}}}
             >
                 Pages
             </Button>

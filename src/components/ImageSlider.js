@@ -25,7 +25,7 @@ const ImageSlider = ({ slides }) => {
 
     return (
         <>
-            <Box sx={{ height: '100%', position: "relative" }}>
+            <Box sx={{ height: '100%', position: "relative"}}>
                 <ArrowForwardIosIcon sx={{ position: 'absolute', top: '50%', transform: 'translate(0, -50%)', right: {xs:0,lg:'35px'}, fontSize: '45px', color: '#fff', zIndex: 1, cursor: 'pointer' }} onClick={goNext} />
                 <ArrowBackIosIcon sx={{ position: 'absolute', top: '50%', transform: 'translate(0, -50%)', left:{xs:0,lg:'35px'}, fontSize: '45px', color: 'white', zIndex: 1, cursor: 'pointer' }} onClick={goPrevious} />
                 <Box style={{ backgroundImage: `url(${slides[currentIndex].url})`, width: '100%', height: '100%', backgroundPosition: "right", backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
@@ -41,7 +41,7 @@ const ImageSlider = ({ slides }) => {
                             </Grid>
                             <Grid item xs={12} sx={{ mt:{xs:2,md:3 }}}>
                                 <Typography variant="h2" color="initial" sx={{ color: 'white', fontWeight: 900,fontSize: {xs:'1.5rem',sm:'2.4rem',md:'2.8rem',lg:'4rem'} }}>
-                                    CITY DREAMES
+                                  {slides[currentIndex].title}
                                 </Typography>
                             </Grid>
                             <Grid item xs={12} sx={{ mt:{xs:2,md:3} }}>
@@ -55,7 +55,7 @@ const ImageSlider = ({ slides }) => {
                                 <Grid container>
                                     <Grid item xs={12} sm={4.5}>
                                         <Typography variant="body1" color="initial" sx={{color:'white',fontSize: {xs:'.8rem',sm:'1rem',lg:'1.3rem'}}}>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                        {slides[currentIndex].about}
                                         </Typography>
                                     </Grid>
                                 </Grid>
