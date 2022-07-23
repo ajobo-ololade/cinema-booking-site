@@ -1,11 +1,58 @@
-import React, { useState } from 'react'
+import React, { useState,useRef } from 'react'
 import Success from './Success'
+import { PaystackButton } from "react-paystack"
+import {useNavigate,useLocation} from 'react-router-dom'
+import axios from 'axios'
 
 const Idconfirm = () => {
+    const publicKey = "pk_test_840ddcce8233c2f6cba3e456d5c832cf541fedc0"
+    const url="http://localhost:6005/sendticket"
+    const location=useLocation()
+    const paid = useRef(null)
     const [uniqueID, setuniqueID] = useState("")
-    const [email, setemail] = useState("")
-    const [fullname, setfullname] = useState("")
+    const [ind, setind] = useState(1)
     const [phonenumber, setphonenumber] = useState("")
+    
+    // const [componentProps, setcomponentProps] = useState({})
+    var email=location.state.email
+    var name=location.state.fullname
+    var phone=phonenumber
+    var amount=250000
+    console.log(location.state) 
+    const obj=location.state
+    const componentProps = {
+            email,
+            amount,
+            metadata: {
+            name,
+            phone,
+            },
+            publicKey,
+            text: "Pay Now",
+            onSuccess: () =>
+                axios.post(url,obj).then((res)=>{
+                    console.log(res)
+                }),
+            // alert("Thanks for doing business with us! Come back soon!!"),
+            onClose: () => alert("Wait! Don't leave :("),
+        }
+    const payNow=()=>{
+        // data-bs-toggle="modal" data-bs-target="#exampleModal02"
+       
+        if(uniqueID=="" ||phonenumber==""){
+            alert("you are yet to fill the id and your number")
+        }
+        else if(uniqueID==location.state.token && phonenumber!=""){
+              setind(0)
+                        
+            } 
+                            
+            else{
+                alert('incorrect token submitted')
+            }
+            
+        
+    }
 
   return (
     <>  
@@ -14,8 +61,8 @@ const Idconfirm = () => {
                 <div className="row">
                     <div className="col-12 col-md-3 " ></div>
                     <div className="col-12 col-md-6" style={{border: "solid 2px red"}}>
-                    <div className="modal fade" id="exampleModal01" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div className="modal-dialog modal-lg modal-dialog-centered">
+                    <div>
+                        <div className="">
                             <div className="modal-content">
 
                             {/* <div className="modal-header">
@@ -23,7 +70,7 @@ const Idconfirm = () => {
                                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div> */}
                             
-                            <div class="modal-body mb-5 mt-3">
+                            <div class="mb-5 mt-3">
                                 <div className="row">
 
                                     <div className='col-12 col-md-6 mt-2'>
@@ -33,23 +80,23 @@ const Idconfirm = () => {
 
                                     <div className='col-12 col-md-6 mt-2'>
                                         <label for="Amount" className="form-label">Amount</label>
-                                        <input type="text" className="form-control" disabled="disabled" id="Amount" aria-describedby="emailHelp" placeholder='NGN2,500' />
+                                        <input type="text" className="form-control" disabled="disabled" id="Amount" aria-describedby="emailHelp" value={location.state.category} placeholder='NGN2,500' />
                                     </div>
 
                                     <div className='col-12 col-md-12 mt-2'>
                                         <label for="Email" className="form-label">Email</label>
-                                        <input type="text" className="form-control" id="Email" aria-describedby="emailHelp" placeholder='johndoe@gmail.com' onChange={(e)=>setemail(e.target.value)}/>
+                                        <input type="text" className="form-control" id="Email" aria-describedby="emailHelp" value={location.state.email} disabled="disabled" placeholder='johndoe@gmail.com'/>
 
                                     </div>
 
                                     <div className='col-12 col-md-6 mt-2'>
                                         <label for="fullname" className="form-label">Fullname</label>
-                                        <input type="text" className="form-control" id="fullname" aria-describedby="emailHelp" placeholder='John doe' onChange={(e)=>setfullname(e.target.value)} />
+                                        <input type="text" className="form-control" disabled="disabled" id="fullname" aria-describedby="emailHelp"value={location.state.fullname} placeholder='John doe' />
                                     </div>
 
                                     <div className='col-12 col-md-6 mt-2'>
                                         <label for="Phonenumber" className="form-label">Phone Number</label>
-                                        <input type="text" className="form-control" id="fullname" aria-describedby="emailHelp" placeholder='+2347068364394' onChange={(e)=>setphonenumber(e.target.value)}/>
+                                        <input type="number" className="form-control" aria-describedby="emailHelp" placeholder='+2347068364394' onChange={(e)=>setphonenumber(e.target.value)}/>
                                     </div>
 
                                     
@@ -58,7 +105,9 @@ const Idconfirm = () => {
                             </div>
 
                             <div class="modal-footer">
-                                <button type="button" className="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal02">Pay Now</button>
+                                <button type="button" className={ind==1?"btn btn-danger":"d-none"}onClick={()=>payNow()}  >Review</button>
+                                
+                             <PaystackButton style={{display:"none"}} className={ind==1?"d-none":"btn btn-success"}   ref={paid}  {...componentProps} >Pay Now</PaystackButton>
                             </div>
                             </div>
                         </div>

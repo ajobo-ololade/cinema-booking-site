@@ -1,4 +1,4 @@
-const userModel = require('../models/user.model')
+const userModel = require('../models/users.model')
 const cloudinary = require('cloudinary');
 const SECRET = process.env.JWT_SECRET;
 const bcrypt = require('bcryptjs');
@@ -7,16 +7,18 @@ const nodemailer = require('nodemailer')
 const path = require('path')
 const crypto = require('crypto')
 const jwt = require('jsonwebtoken')
-const bcrypt = require('bcryptjs');
 cloudinary.config({
     cloud_name: process.env.CLOUD_NAME,
     api_key: process.env.API_KEY,
     api_secret: process.env.API_SECRET
 });
 
-
+const LandingPage=(res,req)=>{
+    res.send("I am here o")
+}
 const sendToken = (req,res) => {
     const email = req.body.email
+    const name=req.body.name
 
     console.log(req.body)
 
@@ -30,7 +32,7 @@ const sendToken = (req,res) => {
             }
         }
     );
-
+console.log('here')
     // point to the template folder
     const handlebarOptions = {
         viewEngine: {
@@ -44,32 +46,33 @@ const sendToken = (req,res) => {
     transporter.use('compile', hbs(handlebarOptions))
     // Importing modules
 
-    // const num = Math.floor(100000 + Math.random() * 900000);
-    const num = Date.now()
+     const num = Math.floor(100000 + Math.random() * 900000);
+  
     var mailOptions = {
         from: '"Joanna" <ladyj2183@gmail.com>', // sender address
-        to: user.email, // list of receivers
+        to: email, // list of receivers
         subject: 'Welcome!',
         template: 'email', // the name of the template file i.e email.handlebars
-        context: {
-            name: `${user.firstname} ${user.lastname}`, // replace {{name}} with Adebola
-            company: 'Medicare',
-            email: user.email,
+        context: {// replace {{name}} with Adebola
+            company: 'BookIt',
+            email: email,
             token: num,
+            name:name
 
         },
     };
 
     // trigger the sending of the E-mail
     transporter.sendMail(mailOptions, function (error, info) {
+        console.log(info)
         if (error) {
             console.log(error);
             res.send({ status: false, message: "error sending token" })
         }
-        else {
-
-            res.send({ status: true, message: num, email: user.email })
+        else if(info!==null) {
             console.log('Message sent: ' + info.response);
+            res.send({ status: true, message: num, response:"An unique has been sent to your email to process your payment", email: email,token:num})
+           
 
         }
     });
@@ -77,10 +80,11 @@ const sendToken = (req,res) => {
 
 }
 const Payment = (req, res) => {
+    console.log(req.body)
     const name = req.body.name
     const email = req.body.email
-    const picture = req.body.picture
-    const seatNo = req.body.seatNo
+    const picture = req.body.profilePic
+    const seatNo = req.body.selected
     const phonenumber = req.body.phonenumber
     const category = req.body.category
     const cinemaAddress = req.body.cinemaAddress
@@ -140,16 +144,16 @@ const Payment = (req, res) => {
 
                         // use a template file with nodemailer
                         transporter.use('compile', hbs(handlebarOptions))
-                        const num = Math.floor(100000 + Math.random() * 900000);
+                        const num = Date.now()
                         var mailOptions = {
                             from: '"Joanna" <ladyj2183@gmail.com>', // sender address
-                            to: user.email, // list of receivers
+                            to: email, // list of receivers
                             subject: 'Welcome!',
                             template: 'ticket', // the name of the template file i.e email.handlebars
                             context: {
-                                name: `${user.firstname} ${user.lastname}`, // replace {{name}} with Adebola
+                                name: name, // replace {{name}} with Adebola
                                 company: 'Avo Cinema',
-                                email: user.email,
+                                email: email,
                                 bookerId: num,
                                 category: category,
                                 seatNo: seatNo,
@@ -164,9 +168,9 @@ const Payment = (req, res) => {
                                 console.log(error);
                                 res.send({ status: false, message: "error sending token" })
                             }
-                            else {
+                            else if(info!==null) {
 
-                                res.send({ status: true, message: num, email: user.email })
+                                res.send({ status: true, message: num, email:email })
                                 console.log('Message sent: ' + info.response);
                                 //         res.send({message:"registration successful",status:true})
                             }
@@ -184,4 +188,4 @@ const Payment = (req, res) => {
 
 
 }
-module.exports = { Payment, sendToken }
+module.exports = { LandingPage,Payment, sendToken }

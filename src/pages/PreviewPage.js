@@ -15,7 +15,7 @@ const PreviewPage = () => {
             <PreviewComponent id={id} />
             <Grid container sx={{ display: 'flex', justifyContent: 'center' }}>
                 <Grid item xs={12} sm={11}>
-                    <Cast Crew={'Crew'} id={id} />
+                    {/* <Cast Crew={'Crew'} id={id} /> */}
                     <Cast Crew={'Cast'} id={id} mt={0}/>
                 </Grid>
             </Grid>

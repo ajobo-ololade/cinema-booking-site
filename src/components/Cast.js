@@ -4,7 +4,7 @@ import {useNavigate,Link} from 'react-router-dom'
 import axios from 'axios'
 const Cast = ({Crew,mt,id}) => {
     
-    const url1=`https://imdb-api.com/en/API/FullCast/k_ehshcpk4/${id}`
+    const url1=`https://imdb-api.com/en/API/FullCast/k_k7roe474/${id}`
     const [info, setinfo] = useState({})
     const [isloading, setisloading] = useState(true)
     useEffect(() => {
@@ -39,7 +39,7 @@ const Cast = ({Crew,mt,id}) => {
                             {Crew}
                         </Typography>
                     </Grid>
-                    {info.actors.map((actor)=>(
+                    {info.actors.slice(0,6).map((actor)=>(
                     <Grid item xs={3} lg={2} sx={{ mt: 3 }}>
                         
 
@@ -60,91 +60,7 @@ const Cast = ({Crew,mt,id}) => {
                             </Grid>
                         </Grid>
                     </Grid>))}
-                    <Grid item xs={3} lg={2} sx={{ mt: 3 }}>
-                        <Grid container >
-                            <Grid item xs={12} sx={{ display: "flex", justifyContent: 'center' }}>
-                                <Box component='img' src='https://res.cloudinary.com/tila09/image/upload/v1656576681/gbpodctajun7sjrqrp2q.jpg' alt='' sx={{ width: '120px', height: '120px', borderRadius: '50%' }} />
-                            </Grid>
-                            <Grid item xs={12} sx={{ display: "flex", justifyContent: 'center' }}>
-                                <Typography variant="body1" color="initial" sx={{ fontWeight: 700 }}>
-                                    Ravi Raghavend
-                                </Typography>
-                            </Grid>
-                            <Grid item xs={12} sx={{ display: "flex", justifyContent: 'center' }}>
-                                <Typography variant="body1" color="initial">
-                                    Actor
-                                </Typography>
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                    <Grid item xs={3} lg={2} sx={{ mt: 3 }}>
-                        <Grid container >
-                            <Grid item xs={12} sx={{ display: "flex", justifyContent: 'center' }}>
-                                <Box component='img' src='https://res.cloudinary.com/tila09/image/upload/v1656576681/gbpodctajun7sjrqrp2q.jpg' alt='' sx={{ width: '120px', height: '120px', borderRadius: '50%' }} />
-                            </Grid>
-                            <Grid item xs={12} sx={{ display: "flex", justifyContent: 'center' }}>
-                                <Typography variant="body1" color="initial" sx={{ fontWeight: 700 }}>
-                                    Ravi Raghavend
-                                </Typography>
-                            </Grid>
-                            <Grid item xs={12} sx={{ display: "flex", justifyContent: 'center' }}>
-                                <Typography variant="body1" color="initial">
-                                    Actor
-                                </Typography>
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                    <Grid item xs={3} lg={2} sx={{ mt: 3 }}>
-                        <Grid container >
-                            <Grid item xs={12} sx={{ display: "flex", justifyContent: 'center' }}>
-                                <Box component='img' src='https://res.cloudinary.com/tila09/image/upload/v1656576681/gbpodctajun7sjrqrp2q.jpg' alt='' sx={{ width: '120px', height: '120px', borderRadius: '50%' }} />
-                            </Grid>
-                            <Grid item xs={12} sx={{ display: "flex", justifyContent: 'center' }}>
-                                <Typography variant="body1" color="initial" sx={{ fontWeight: 700 }}>
-                                    Ravi Raghavend
-                                </Typography>
-                            </Grid>
-                            <Grid item xs={12} sx={{ display: "flex", justifyContent: 'center' }}>
-                                <Typography variant="body1" color="initial">
-                                    Actor
-                                </Typography>
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                    <Grid item xs={3} lg={2} sx={{ mt: 3 }}>
-                        <Grid container >
-                            <Grid item xs={12} sx={{ display: "flex", justifyContent: 'center' }}>
-                                <Box component='img' src='https://res.cloudinary.com/tila09/image/upload/v1656576681/gbpodctajun7sjrqrp2q.jpg' alt='' sx={{ width: '120px', height: '120px', borderRadius: '50%' }} />
-                            </Grid>
-                            <Grid item xs={12} sx={{ display: "flex", justifyContent: 'center' }}>
-                                <Typography variant="body1" color="initial" sx={{ fontWeight: 700 }}>
-                                    Ravi Raghavend
-                                </Typography>
-                            </Grid>
-                            <Grid item xs={12} sx={{ display: "flex", justifyContent: 'center' }}>
-                                <Typography variant="body1" color="initial">
-                                    Actor
-                                </Typography>
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                    <Grid item xs={3} lg={2} sx={{ mt: 3 }}>
-                        <Grid container >
-                            <Grid item xs={12} sx={{ display: "flex", justifyContent: 'center' }}>
-                                <Box component='img' src='https://res.cloudinary.com/tila09/image/upload/v1656576681/gbpodctajun7sjrqrp2q.jpg' alt='' sx={{ width: '120px', height: '120px', borderRadius: '50%' }} />
-                            </Grid>
-                            <Grid item xs={12} sx={{ display: "flex", justifyContent: 'center' }}>
-                                <Typography variant="body1" color="initial" sx={{ fontWeight: 700 }}>
-                                    Ravi Raghavend
-                                </Typography>
-                            </Grid>
-                            <Grid item xs={12} sx={{ display: "flex", justifyContent: 'center' }}>
-                                <Typography variant="body1" color="initial">
-                                    Actor
-                                </Typography>
-                            </Grid>
-                        </Grid>
-                    </Grid>
+                   
                 </Grid>
 
                     }

@@ -15,7 +15,7 @@ const Featured = () => {
     };
   
 
-    
+    // k_ehshcpk4
 
     return (
         <>
@@ -31,10 +31,10 @@ const Featured = () => {
                                 </TabList>
                             </Box>
                             <TabPanel value="1">
-                                <Card url2={"https://imdb-api.com/en/API/MostPopularMovies/k_ehshcpk4"}/>
+                                <Card url2={"https://imdb-api.com/en/API/MostPopularMovies/k_k7roe474"}/>
                             </TabPanel>
-                            <TabPanel value="2"><Card url2={"https://imdb-api.com/en/API/ComingSoon/k_ehshcpk4"}/></TabPanel>
-                            <TabPanel value="3"><Card url2={"https://imdb-api.com/en/API/InTheaters/k_ehshcpk4"} /></TabPanel>
+                            <TabPanel value="2"><Card url2={"https://imdb-api.com/en/API/ComingSoon/k_k7roe474"}/></TabPanel>
+                            <TabPanel value="3"><Card url2={"https://imdb-api.com/en/API/InTheaters/k_k7roe474"} /></TabPanel>
                         </TabContext>
                     </Box>
                 </Grid>

@@ -4,12 +4,18 @@ import {useNavigate,Link} from 'react-router-dom'
 import axios from 'axios'
 const PreviewComponent = ({id}) => {
     // alert(id)
-      const url=`https://imdb-api.com/en/API/Trailer/k_ehshcpk4/${id}`
+      const url=`https://imdb-api.com/en/API/Trailer/k_k7roe474/${id}`
+      const url1=`https://imdb-api.com/en/API/Title/k_k7roe474/${id}`
     const [vid, setvid] = useState({})
+    const [plot, setplot] = useState({})
     useEffect(() => {
       axios.get(url).then((res)=>{
         console.log(res.data)
         setvid(res.data)
+    })
+      axios.get(url1).then((res)=>{
+        console.log(res.data)
+        setplot(res.data)
     })
     },[] )
     
@@ -34,7 +40,8 @@ const PreviewComponent = ({id}) => {
                     About the Movie
                 </Typography>
                 <p>
-                A biographical drama based on the life of former ISRO scientist Nambi Narayanan, who fought years on end for justice after being falsely accused of espionage.A biographical drama based on the life of former ISRO scientist Nambi Narayanan, who fought years on end for justice after being falsely accused of espionage.
+                  {plot.plot}
+               
                 </p>
             </Grid>
         </Grid>

@@ -102,7 +102,7 @@ const Card = ({url2}) => {
                                             previewID.current[index] = ref;
                                             }}
                                         id={movie.id} 
-                                        onClick={()=>preview(index)} variant='contained'  sx={{backgroundColor:"red"}} className='btn'>Preview</Button>
+                                        onClick={()=>preview(index)} variant='contained'  sx={{backgroundColor:"red"}} className='btn2'>Preview</Button>
                                         <Typography variant="" color="initial" sx={{ mt: 1.5, color: 'white', fontWeight: "20px" }}>
                                             {movie.title}
                                         </Typography>

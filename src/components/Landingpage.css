@@ -38,7 +38,7 @@
 .cards:hover::before{
   background-color:rgba(69, 69, 69, 0.5);
 }
-.btn{
+.btn2{
   opacity: 0;
   transition: opacity 0.5s ease;
   position: relative;
@@ -50,11 +50,11 @@
   cursor: pointer;
   z-index: 3;
 }
-.btn:hover{
+.btn2:hover{
   background-color: red;
   opacity:1;  
 }
-.cards:hover .btn {
+.cards:hover .btn2 {
   opacity: 1;
 }
 /* .overlay{
