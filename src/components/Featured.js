@@ -16,7 +16,7 @@ const Featured = () => {
     return (
         <>
             <Grid container sx={{display:'flex',justifyContent:'center',backgroundColor:'rgb(29,30,31)',pt:'5rem',pb:'5rem'}}>
-                <Grid item xs={12} md={10}>
+                <Grid item xs={12} md={11}>
                     <Box sx={{ height: '60vh'}}>
                         <TabContext value={value}>
                             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
