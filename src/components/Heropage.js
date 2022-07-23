@@ -25,7 +25,7 @@ const Heropage = () => {
 
     return (
         <>
-            <Box sx={{ width: '100%', height:{lg:'93vh'}}}>
+            <Box sx={{ width: '100%', height:{xs:'50vh',lg:'93vh'}}}>
                 <ImageSlider slides={slides} />
             </Box>
         </>
