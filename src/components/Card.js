@@ -9,7 +9,7 @@ const Card = () => {
       const [allMovies, setallMovies] = useState([])
       const [error, seterror] = useState("")
     //   const url ="https://imdb-api.com/API/AdvancedSearch/k_s7l8kj1r/?genres=action,adventure"
-      const url="https://imdb-api.com/en/API/MostPopularMovies/k_d6a0lkoi"
+    //   const url="https://imdb-api.com/en/API/MostPopularMovies/k_ehshcpk4"
     //  "https://imdb-api.com/en/API/FullCast/k_lv17lnyd/tt1375666"
       // "https://imdb-api.com/en/API/Top250Movies/k_d6a0lkoi"
       // "http://www.omdbapi.com/?i=tt3896198&apikey=c7e3c7b8"
