@@ -13,10 +13,9 @@ const PopularMovies = () => {
                     </Typography>
                 </Grid>
                 <Grid item xs={12} sm={10.5} sx={{mt:5}} >
-                    <Grid container>
-                        <Grid item xs={12} sm={12}>
-                            <Grid container sx={{ display: "flex", justifyContent: 'space-between', flexWrap: 'revert-layer' }}>
-                                <Grid item xs={6} sm={3.5} lg={2.2}>
+                    
+                            <Grid container sx={{ display: "flex", justifyContent: 'space-between',}}>
+                                <Grid item xs={5.5} sm={3.5} lg={2.2}>
                                     <Box sx={{ width: '100%', height: '40vh', backgroundImage: `url(${url1})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} />
                                     <Typography variant="h6" color="initial" sx={{ mt: 1.5, color: 'white' }}>
                                         Title
@@ -27,7 +26,7 @@ const PopularMovies = () => {
                                         <span>Action</span>
                                     </Box>
                                 </Grid>
-                                <Grid item xs={6} sm={3.5} lg={2.2}>
+                                <Grid item xs={5.5} sm={3.5} lg={2.2}>
                                     <Box sx={{ width: '100%', height: '40vh', backgroundImage: `url(${url1})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} />
                                     <Typography variant="h6" color="initial" sx={{ mt: 1.5, color: 'white' }}>
                                         Title
@@ -38,7 +37,7 @@ const PopularMovies = () => {
                                         <span>Action</span>
                                     </Box>
                                 </Grid>
-                                <Grid item xs={6} sm={3.5} lg={2.2}>
+                                <Grid item xs={5.5} sm={3.5} lg={2.2}>
                                     <Box sx={{ width: '100%', height: '40vh', backgroundImage: `url(${url1})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} />
                                     <Typography variant="h6" color="initial" sx={{ mt: 1.5, color: 'white' }}>
                                         Title
@@ -49,7 +48,7 @@ const PopularMovies = () => {
                                         <span>Action</span>
                                     </Box>
                                 </Grid>
-                                <Grid item xs={6} sm={3.5} lg={2.2}>
+                                <Grid item xs={5.5} sm={3.5} lg={2.2}>
                                     <Box sx={{ width: '100%', height: '40vh', backgroundImage: `url(${url1})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} />
                                     <Typography variant="h6" color="initial" sx={{ mt: 1.5, color: 'white' }}>
                                         Title
@@ -60,7 +59,7 @@ const PopularMovies = () => {
                                         <span>Action</span>
                                     </Box>
                                 </Grid>
-                                <Grid item xs={6} sm={3.5} lg={2.2}>
+                                <Grid item xs={5.5} sm={3.5} lg={2.2}>
                                     <Box sx={{ width: '100%', height: '40vh', backgroundImage: `url(${url1})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} />
                                     <Typography variant="h6" color="initial" sx={{ mt: 1.5, color: 'white' }}>
                                         Title
@@ -74,8 +73,7 @@ const PopularMovies = () => {
                                 
                             </Grid>
 
-                        </Grid>
-                    </Grid>
+                   
                 </Grid>
             </Grid>
         </>

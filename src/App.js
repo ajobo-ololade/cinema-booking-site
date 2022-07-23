@@ -1,7 +1,6 @@
 import React from "react";
 import './App.css';
 import LandingpageNav from './components/LandingpageNav';
-<<<<<<< HEAD
 import PagesdropDown from './components/PagesdropDown';
 import PreviewComponent from './components/PreviewComponent';
 import PreviewPage from './pages/PreviewPage';
@@ -14,13 +13,10 @@ import Test from './components/Test';
  import Book from './components/Book';
 import Idconfirm from './components/Idconfirm';
 import SignIn from "./components/SignIn";
-=======
->>>>>>> server/main
 
 function App() {
   return (
     <>
-<<<<<<< HEAD
     <Routes>
     <Route path="/" element={<LandingPage/>}/>
     <Route path="/sign" element={<SignIn/>}/>
@@ -29,9 +25,6 @@ function App() {
     <Route path='/payment' element={<Idconfirm/>} />
    
     </Routes>
-=======
-      <LandingpageNav />
->>>>>>> server/main
     </>
   );
 }
