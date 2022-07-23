@@ -71,7 +71,7 @@ const LandingpageNav = () => {
           </MyStyle>
         </Grid>
         <Grid item xs={5} lg={4.5} sx={{ display: 'flex', justifyContent: 'right', alignItems: 'center', height: '100%', mr: { xs: 0, sm: '2.5rem', lg: '5rem' } }}>
-          <Box sx={{ display: 'flex', backgroundColor: 'white', display: { xs: 'none', sm: 'block' } }}>
+          <Box sx={{alignItems:'center', backgroundColor: 'white', display: { xs: 'none', sm: 'flex' } }}>
             <input style={{ border: 'none' }} />
             <SearchIcon sx={{ color: 'black' }} />
           </Box>
