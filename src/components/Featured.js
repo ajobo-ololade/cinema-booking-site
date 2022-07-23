@@ -24,10 +24,10 @@ const Featured = () => {
                     <Box >
                         <TabContext value={value}>
                             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                                <TabList onChange={handleChange} aria-label="lab API tabs example">
-                                    <Tab label="Item One" value="1" sx={{ color: 'white' }} />
-                                    <Tab label="Item Two" value="2" sx={{ color: 'white' }} />
-                                    <Tab label="Item Three" value="3" sx={{ color: 'white' }} />
+                                <TabList  onChange={handleChange} aria-label="lab API tabs example">
+                                    <Tab label="ALL" value="1" sx={{ color: 'white' }} />
+                                    <Tab label="Upcoming Movies" value="2" sx={{ color: 'white' }} />
+                                    <Tab label="Popular Movies" value="3" sx={{ color: 'white' }} />
                                 </TabList>
                             </Box>
                             <TabPanel value="1">

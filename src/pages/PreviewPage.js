@@ -4,6 +4,8 @@ import Cast from '../components/Cast';
 import {useNavigate,useLocation} from 'react-router-dom'
 import LandingpageNav from '../components/LandingpageNav'
 import PreviewComponent from '../components/PreviewComponent';
+import Footer from '../components/Footer';
+import BookTicket from '../components/BookTicket';
 const PreviewPage = () => {
     const location=useLocation()
     var id =location.state.urlId;
@@ -17,6 +19,8 @@ const PreviewPage = () => {
                     <Cast Crew={'Cast'} id={id} mt={0}/>
                 </Grid>
             </Grid>
+            <BookTicket />
+            <Footer/>
 
         </>
     )

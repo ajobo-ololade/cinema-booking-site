@@ -8,6 +8,7 @@ import LandingPage from './pages/LandingPage';
 
 import {Routes,Route, Navigate} from 'react-router-dom'
 import Test from './components/Test';
+// import BookTicket from './components/BookTicket';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
     <Routes>
     <Route path="/" element={<LandingPage/>}/>
     <Route path="/preview" element={<PreviewPage/>}/>
+    {/* <Route path='/book' element={<BookTicket />} /> */}
    
     </Routes>
     </>

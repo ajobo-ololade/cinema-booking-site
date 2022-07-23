@@ -19,12 +19,11 @@ const PreviewComponent = ({id}) => {
     <>
     <Box sx={{height:"90vh",width:'100%'}}>
         <Box sx={{height:'70vh'}}>
-        <iframe style={{width:"200%", height:"100%"}}
-      src={vid.linkEmbed}
+        <iframe style={{width:"1500px", height:"500px"}} src={vid.linkEmbed}
     //   src="https://www.imdb.com/video/imdb/vi2959588889/imdb/embed"
-      title="Youtube Player"
-      frameborder="0"
-      allowFullScreen
+        title="Youtube Player"
+        frameborder="0"
+        allowFullScreen
     />
 
             {/* <a href="https://imdb-api.com/en/API/Trailer/k_lv17lnyd/${id}/videogallery">hey</a> */}
