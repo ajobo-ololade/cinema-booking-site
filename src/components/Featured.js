@@ -7,7 +7,7 @@ import { Box, Container, Grid, Tab } from '@mui/material';
 import Card from './Card';
 
 const Featured = () => {
-    const [value, setValue] = React.useState('one');
+    const [value, setValue] = React.useState('1');
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -15,7 +15,7 @@ const Featured = () => {
 
     return (
         <>
-            <Grid container sx={{display:'flex',justifyContent:'center',backgroundColor:'rgb(29,30,31)'}}>
+            <Grid container sx={{display:'flex',justifyContent:'center',backgroundColor:'rgb(29,30,31)',pt:'5rem',pb:'5rem'}}>
                 <Grid item xs={12} md={10}>
                     <Box sx={{ height: '60vh'}}>
                         <TabContext value={value}>

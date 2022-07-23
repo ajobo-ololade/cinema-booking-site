@@ -7,9 +7,9 @@ const Card = () => {
     <>
     <Grid container>
         <Grid item xs={12} sm={12}>
-            <Grid container sx={{display:"flex",justifyContent:'space-between'}}>
-                <Grid item xs={6} sm={3.5} lg={1.8} sx={{height:'40vh'}}>
-                    <Box   sx={{width:'100%',height:'100%',backgroundImage:`url(${url1})`,backgroundPosition:'center',backgroundSize:'cover',backgroundRepeat:'no-repeat'}}/>
+            <Grid container sx={{display:"flex",justifyContent:'space-between',flexWrap:'revert-layer'}}>
+                <Grid item xs={6} sm={3.5} lg={1.8}>
+                    <Box   sx={{width:'100%',height:'40vh',backgroundImage:`url(${url1})`,backgroundPosition:'center',backgroundSize:'cover',backgroundRepeat:'no-repeat'}}/>
                     <Typography variant="h6" color="initial" sx={{mt:1.5,color:'white'}}>
                         Title
                     </Typography>
@@ -20,20 +20,63 @@ const Card = () => {
                     </Box>
                 </Grid>
                 <Grid item xs={6} sm={3.5} lg={1.8}>
-                    lorem lorem
+                    <Box   sx={{width:'100%',height:'40vh',backgroundImage:`url(${url1})`,backgroundPosition:'center',backgroundSize:'cover',backgroundRepeat:'no-repeat'}}/>
+                    <Typography variant="h6" color="initial" sx={{mt:1.5,color:'white'}}>
+                        Title
+                    </Typography>
+                    <Box sx={{display:'flex',justifyContent:'space-between',color:'gray'}}>
+                        <span>2021</span>
+                        <span>+18</span>
+                        <span>Action</span>
+                    </Box>
                 </Grid>
                 <Grid item xs={6} sm={3.5} lg={1.8}>
-                    lorem lorem
+                    <Box   sx={{width:'100%',height:'40vh',backgroundImage:`url(${url1})`,backgroundPosition:'center',backgroundSize:'cover',backgroundRepeat:'no-repeat'}}/>
+                    <Typography variant="h6" color="initial" sx={{mt:1.5,color:'white'}}>
+                        Title
+                    </Typography>
+                    <Box sx={{display:'flex',justifyContent:'space-between',color:'gray'}}>
+                        <span>2021</span>
+                        <span>+18</span>
+                        <span>Action</span>
+                    </Box>
                 </Grid>
                 <Grid item xs={6} sm={3.5} lg={1.8}>
-                    lorem lorem
+                    <Box   sx={{width:'100%',height:'40vh',backgroundImage:`url(${url1})`,backgroundPosition:'center',backgroundSize:'cover',backgroundRepeat:'no-repeat'}}/>
+                    <Typography variant="h6" color="initial" sx={{mt:1.5,color:'white'}}>
+                        Title
+                    </Typography>
+                    <Box sx={{display:'flex',justifyContent:'space-between',color:'gray'}}>
+                        <span>2021</span>
+                        <span>+18</span>
+                        <span>Action</span>
+                    </Box>
                 </Grid>
                 <Grid item xs={6} sm={3.5} lg={1.8}>
-                    lorem lorem
+                    <Box   sx={{width:'100%',height:'40vh',backgroundImage:`url(${url1})`,backgroundPosition:'center',backgroundSize:'cover',backgroundRepeat:'no-repeat'}}/>
+                    <Typography variant="h6" color="initial" sx={{mt:1.5,color:'white'}}>
+                        Title
+                    </Typography>
+                    <Box sx={{display:'flex',justifyContent:'space-between',color:'gray'}}>
+                        <span>2021</span>
+                        <span>+18</span>
+                        <span>Action</span>
+                    </Box>
                 </Grid>
                 <Grid item xs={6} sm={3.5} lg={1.8}>
-                    lorem lorem
+                    <Box   sx={{width:'100%',height:'40vh',backgroundImage:`url(${url1})`,backgroundPosition:'center',backgroundSize:'cover',backgroundRepeat:'no-repeat'}}/>
+                    <Typography variant="h6" color="initial" sx={{mt:1.5,color:'white'}}>
+                        Title
+                    </Typography>
+                    <Box sx={{display:'flex',color:'gray'}}>
+                      <Box>
+                      <span>2021</span>
+                        <span>+18</span>
+                        <span>Action</span>
+                      </Box>
+                    </Box>
                 </Grid>
+                
             </Grid>
         </Grid>
     </Grid>
