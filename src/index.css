@@ -11,3 +11,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+input, select{
+  border: none;
+  border-bottom: 1px solid black !important;
+}
+input{
+  border-color: black !important;
+  border-bottom-color: black !important;
+  /* #dd3675, #b44593 */
+}
+section:focus{
+  outline: none;
+  border: none;
+}
+label{
+  color: black !important;
+}
+.btn{
+  color: white !important
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#lists:hover{
+  background-color: red;
+  color: white;
+}
