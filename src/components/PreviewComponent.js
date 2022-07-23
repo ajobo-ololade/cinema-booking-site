@@ -51,8 +51,8 @@ const PreviewComponent = ({id}) => {
                     </div>
                 </div>
             </div> :
-        <Box sx={{height:'70vh'}}>
-        <iframe style={{width:"1500px", height:"500px"}} src={vid.linkEmbed}
+        <Box sx={{height:'70vh',backgroundColor:'rgb(29,30,31)',width:'100%',display:'flex',justifyContent:'center'}}>
+        <iframe style={{width:'50%'}} src={vid.linkEmbed}
     //   src="https://www.imdb.com/video/imdb/vi2959588889/imdb/embed"
         title="Youtube Player"
         frameborder="0"
@@ -62,7 +62,7 @@ const PreviewComponent = ({id}) => {
             {/* <a href="https://imdb-api.com/en/API/Trailer/k_lv17lnyd/${id}/videogallery">hey</a> */}
           </Box>
           }
-        <Grid container>
+        <Grid container sx={{mt:5}}>
             <Grid item xs={12} lg={8} sx={{ml:'7rem'}}>
                 <Typography variant="h5" color="initial" sx={{fontWeight:700}}>
                     About the Movie

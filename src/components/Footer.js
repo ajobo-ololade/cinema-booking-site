@@ -11,16 +11,16 @@ const Footer = () => {
             <section className="mb-4">
 
             {/* <!-- Facebook --> */}
-            <a className="btn btn-link btn-floating btn-lg text-dark m-1" role="button" ><i className="fab fa-facebook-f"></i></a>
+            <a className=" text-dark m-1 me-3 fs-5" role="button" ><i className="fab fa-facebook-f"></i></a>
 
             {/* <!-- Twitter --> */}
-            <a className="btn btn-link btn-floating btn-lg text-dark m-1" href="#" role="button"><i className="fab fa-twitter"></i></a>
+            <a className=" text-dark m-1 me-3 fs-5" href="#" role="button"><i className="fab fa-twitter"></i></a>
 
             {/* <!-- google --> */}
-            <a className="btn btn-link btn-floating btn-lg text-dark m-1" href="#" role="button"><i className="fab fa-google"></i></a>
+            <a className=" text-dark m-1 me-3 fs-5" href="trailblazerforhackelite@gmail.com" role="button"><i className="fab fa-google"></i></a>
 
             {/* <!-- instagram --> */}
-            <a className="btn btn-link btn-floating btn-lg text-dark m-1" href="#" role="button"><i className="fab fa-instagram"></i></a>
+            <a className="text-dark m-1 me-3 fs-5" href="#" role="button"><i className="fab fa-instagram"></i></a>
             
             </section>
         </div>

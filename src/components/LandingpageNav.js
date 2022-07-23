@@ -25,7 +25,7 @@ const MyStyle = styled(NavLink)({
     color: 'red'
   },
 })
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = ['Home', 'Movies', 'Shows', 'Pages'];
 const LandingpageNav = () => {
 
   const handleOpenUserMenu = (event) => {
@@ -39,13 +39,13 @@ const LandingpageNav = () => {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   return (
     <>
-      <Grid container sx={{ backgroundColor: "rgb(29,30,31)", height: '65px', display: 'flex', justifyContent: 'space-between' }}>
+      <Grid container sx={{ backgroundColor: "rgb(29,30,31)", height: '65px', display: 'flex', justifyContent: 'space-between'}}>
         <Grid item xs={2} sx={{ display: 'flex', alignItems: 'center' }}>
           <Box sx={{ display: { xs: 'none', sm: 'block' }, ml: { xm: 0, sm: 4, lg: '5rem' }, fontSize: { sm: '1rem', lg: '1.5rem' }, fontWeight: 900, color: "white" }} className='typo'>
             Ava
           </Box>
           <Box sx={{ display: { xs: 'none', sm: 'block' }, fontSize: { sm: '1rem', lg: '1.5rem' }, fontWeight: 900, color: "red" }} className='typo'>
-            Cinema
+            Bookings
           </Box>
           <Box component='img' src={logo2} alt='' sx={{ width: '100px', height: '40px', display: { xs: 'block', sm: 'none' } }}>
           </Box>

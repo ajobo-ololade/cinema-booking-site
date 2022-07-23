@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import {useNavigate,useLocation} from 'react-router-dom'
 import Idconfirm from './Idconfirm'
+import LandingpageNav from './LandingpageNav'
+
 
 const Book = () => {
     const location=useLocation()
@@ -60,8 +62,8 @@ const Book = () => {
     }
   return (
     <>  
-        
-        <div>
+        <LandingpageNav/>
+        <div className='lineargrad pt-5'>
             <div className="container">
                 <div className="row">
                     <div className="col-12 col-md-3 " ></div>
@@ -74,7 +76,7 @@ const Book = () => {
                                 <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
                                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div> */}
-                            <div class="mt-3 mb-5">
+                            <div class="mt-3 mb-5 bg-light p-5">
                                 <div className="row">
 
                                     <div className='col-12 col-md-6 mt-3'>
@@ -139,7 +141,7 @@ const Book = () => {
 
                                         <div className=" col-12 col-md-4 mt-3 mt-md-5">
                                             <div>
-                                                <label for='formFileLg' className='form-label btn btn-outline-dark'> Upload your Image </label>
+                                                <label for='formFileLg' className='form-label btn btn-outline-dark bg-danger'> Upload your Image </label>
                                                 <input type="file" hidden id='formFileLg' onChange={(e)=>avatar(e)}/>
                                             </div>
                                         </div>

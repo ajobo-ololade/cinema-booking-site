@@ -70,3 +70,7 @@
     ); 
     background: linear-gradient(to right, black, rgb(29,39,31) 2%);
 } */
+.lineargrad{
+    background: linear-gradient(to right, black, rgb(29,39,31) 2%);
+    height: 100vh;
+}
