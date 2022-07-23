@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
 import LandingpageNav from './components/LandingpageNav';
 import PagesdropDown from './components/PagesdropDown';

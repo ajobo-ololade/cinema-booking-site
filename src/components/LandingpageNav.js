@@ -3,11 +3,11 @@ import React from 'react'
 import logo from '../assets/logo2.png'
 import { NavLink } from 'react-router-dom'
 import styled from '@emotion/styled'
-import Landingpage from '../components/Landingpage.css'
-import PagesdropDown from './PagesdropDown'
+import Landingpage from '../components/Landingpage.css';
+import PagesdropDown from './PagesdropDown';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import logo2 from '../assets/mobile.png'
+import logo2 from '../assets/mobile.png';
 import MenuIcon from '@mui/icons-material/Menu';
 import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
