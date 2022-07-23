@@ -19,7 +19,7 @@ const Featured = () => {
 
     return (
         <>
-            <Grid container sx={{display:'flex',justifyContent:'center',backgroundColor:'rgb(29,30,31)'}}>
+            <Grid container sx={{display:'flex',justifyContent:'center',backgroundColor:'rgb(29,30,31)',pt:'5rem',pb:'5rem'}}>
                 <Grid item xs={12} md={10}>
                     <Box >
                         <TabContext value={value}>
@@ -31,10 +31,10 @@ const Featured = () => {
                                 </TabList>
                             </Box>
                             <TabPanel value="1">
-                                <Card url2={"https://imdb-api.com/en/API/MostPopularMovies/k_d6a0lkoi"}/>
+                                <Card url2={"https://imdb-api.com/en/API/MostPopularMovies/k_ehshcpk4"}/>
                             </TabPanel>
-                            <TabPanel value="2"><Card url2={"https://imdb-api.com/en/API/ComingSoon/k_d6a0lkoi"}/></TabPanel>
-                            <TabPanel value="3"><Card url2={"https://imdb-api.com/en/API/InTheaters/k_d6a0lkoi"} /></TabPanel>
+                            <TabPanel value="2"><Card url2={"https://imdb-api.com/en/API/ComingSoon/k_ehshcpk4"}/></TabPanel>
+                            <TabPanel value="3"><Card url2={"https://imdb-api.com/en/API/InTheaters/k_ehshcpk4"} /></TabPanel>
                         </TabContext>
                     </Box>
                 </Grid>
