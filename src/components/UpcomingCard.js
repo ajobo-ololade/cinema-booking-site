@@ -1,7 +1,9 @@
 import React, { useState,useEffect} from 'react'
 import { TabContext, TabPanel, TabList } from '@mui/lab';
-import { Box, Container, Grid, Tab,Typography } from '@mui/material';
+import { Box, Container, Grid, Tab,Typography ,Button} from '@mui/material';
 import axios from 'axios'
+import { Slide } from 'react-slideshow-image'
+import 'react-slideshow-image/dist/styles.css'
 // import Card from './Card';
 
 const UpcomingCard = () => {
@@ -42,32 +44,45 @@ const UpcomingCard = () => {
     const [url1, seturl1] = useState('https://res.cloudinary.com/tila09/image/upload/v1656576681/gbpodctajun7sjrqrp2q.jpg')
   return (
     <>
-     {isloading? <div>
-        <div class="d-flex justify-content-center">
-            <div class="spinner-border" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-            </div>
-        </div>:
-        <Grid container>
-        <Grid item xs={12} sm={12}>
-            <Grid container sx={{display:"flex",justifyContent:'space-between'}}>
-                {allMovies.slice(0,6).map((movie)=>(
-                <Grid item xs={6} sm={3.5} lg={1.8} >
-                    <Box   sx={{width:'100%',height:'40vh',backgroundImage:`url(${movie.image})`,backgroundPosition:'center',backgroundSize:'cover',backgroundRepeat:'no-repeat'}}/>
-                    <Typography variant="" color="initial" sx={{mt:1.5,color:'white',fontWeight:"20px"}}>
-                        {movie.title}
-                    </Typography>
-                    <Box sx={{display:'flex',justifyContent:'space-between',color:'gray'}}>
-                        <span>{movie.year}</span>
-                        <span>{movie.imDbRating}</span>
-                        <span>Action</span>
-                    </Box>
-                </Grid>
-                ))}
-            </Grid>
-        </Grid>
-    </Grid>}
+          {isloading ? <div>
+                <div class="d-flex justify-content-center">
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div> :
+                <Grid container>
+                    <Grid item xs={12} sm={12}> 
+                    <Slide
+                             {...properties}
+                             style={{width:"300px",backgroundColor:"red"}}
+                                >
+                        <Grid container sx={{ display: "flex", justifyContent: 'space-between', }}>
+                           
+                                {allMovies.slice(0,6).map((movie) => (
+                                    <Grid
+                                    style={{
+                                        textAlign:'left',
+                                        padding: '0px 0',
+                                        fontSize: '30%',
+                                     }} item xs={6} sm={3.5} lg={1.8} className="card" >
+                                        <Box sx={{ width: '100%', height: '40vh', backgroundImage: `url(${movie.image})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} />
+                                        <Button variant='contained'  sx={{backgroundColor:"red"}} className='btn'>Preview</Button>
+                                        <Typography variant="" color="initial" sx={{ mt: 1.5, color: 'white', fontWeight: "20px" }}>
+                                            {movie.title}
+                                        </Typography>
+                                        <Box sx={{ display: 'flex', justifyContent: 'space-between', color: 'gray' }}>
+                                            <span>{movie.year}</span>
+                                            <span>{movie.imDbRating}</span>
+                                            <span>Action</span>
+                                        </Box>
+                                    </Grid>
+                                ))}
+                           
+                        </Grid>
+                         </Slide>
+                    </Grid>
+                </Grid>}
     </>
   )
 }

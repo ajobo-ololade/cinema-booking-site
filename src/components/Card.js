@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from 'react'
 import { TabContext, TabPanel, TabList } from '@mui/lab';
-import { Box, Container, Grid, Tab, Typography } from '@mui/material';
+import { Box, Container, Grid, Tab, Typography,Button } from '@mui/material';
 import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
 import axios from 'axios'
 // import Card from './Card';
 
-const Card = () => {
-    // const properties = {
-    //     duration: 3000,
-    //     slidesToShow: 6,
-    //     slidesToScroll:2,
-    //     autoplay: false,
-    // };
+const Card = ({url1}) => {
+    const properties = {
+        duration: 3000,
+        slidesToShow: 1,
+        // slidesToScroll:2,
+        autoplay: false,
+    };
     //const [num, setnum] = useState(0)
     const [allMovies, setallMovies] = useState([])
     const [error, seterror] = useState("")
-    const url = "https://imdb-api.com/en/API/MostPopularMovies/k_d6a0lkoi"
+    // const url = url1;
     // "https://imdb-api.com/API/AdvancedSearch/k_s7l8kj1r/?genres=action,adventure"
     //   
     //   "https://imdb-api.com/en/API/MostPopularMovies/k_lv17lnyd"
@@ -32,7 +32,7 @@ const Card = () => {
     }, [])
 
     const makeRequest = () => {
-        axios.get(url).then((res) => {
+        axios.get(url1).then((res) => {
             if (res.status === 200) {
 
 
@@ -61,13 +61,20 @@ const Card = () => {
                 <Grid container>
                     <Grid item xs={12} sm={12}> 
                     <Slide
-                                // {...properties}
+                             {...properties}
+                             style={{width:"300px",backgroundColor:"red"}}
                                 >
-                        <Grid container sx={{ display: "flex", justifyContent: 'space-between' }}>
+                        <Grid container sx={{ display: "flex", justifyContent: 'space-between', }}>
                            
-                                {allMovies.map((movie) => (
-                                    <Grid item xs={6} sm={3.5} lg={1.8} >
+                                {allMovies.slice(0,6).map((movie) => (
+                                    <Grid
+                                    style={{
+                                        textAlign:'left',
+                                        padding: '0px 0',
+                                        fontSize: '30%',
+                                     }} item xs={6} sm={3.5} lg={1.8} className="card" >
                                         <Box sx={{ width: '100%', height: '40vh', backgroundImage: `url(${movie.image})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} />
+                                        <Button variant='contained'  sx={{backgroundColor:"red"}} className='btn'>Preview</Button>
                                         <Typography variant="" color="initial" sx={{ mt: 1.5, color: 'white', fontWeight: "20px" }}>
                                             {movie.title}
                                         </Typography>
@@ -78,9 +85,9 @@ const Card = () => {
                                         </Box>
                                     </Grid>
                                 ))}
-                            
+                           
                         </Grid>
-                        </Slide>
+                         </Slide>
                     </Grid>
                 </Grid>}
         </>
