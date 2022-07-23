@@ -8,8 +8,8 @@ const cors=require('cors')
 app.use(cors())
 require('dotenv').config()
 const mongoose=require("mongoose")
-const URI=`mongodb+srv://AboladeTikristi:tikristi@cluster0.8i7iv.mongodb.net/hospital_management?retryWrites=true&w=majority`
 require('dotenv').config()
+const URI=process.env.MON_URI
 const PORT=process.env.PORT||5006
 const userRouter=require("./routes/users.route")
 app.get('/',(req,res)=>{

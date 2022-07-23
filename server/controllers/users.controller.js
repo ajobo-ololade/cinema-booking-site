@@ -81,15 +81,17 @@ console.log('here')
 }
 const Payment = (req, res) => {
     console.log(req.body)
-    const name = req.body.name
-    const email = req.body.email
-    const picture = req.body.profilePic
-    const seatNo = req.body.selected
+    const name = req.body.obj.fullname
+    const email = req.body.obj.email
+    const picture = req.body.obj.profilePic
+    const seatNo = req.body.obj.selected
     const phonenumber = req.body.phonenumber
-    const category = req.body.category
-    const cinemaAddress = req.body.cinemaAddress
+    const category = req.body.obj.category
+    const cinemaAddress = req.body.obj.cinemaAddress
+    const cinema = req.body.obj.cinema
     const dateBooked = req.body.date
-
+    const amount=req.body.amount
+    const num = Date.now()
     cloudinary.v2.uploader.upload(picture,
         {
             folder: 'Ava Cinema Bookers pictures',
@@ -105,14 +107,16 @@ const Payment = (req, res) => {
             else {
                 console.log(result)
                 const details = {
-                    name: name,
+                    fullname: name,
                     email: email,
-                    picture: result.secure_url,
-                    seatNo: seatNo,
-                    phonenumber: phonenumber,
+                    Image: result.secure_url,
+                    seat: seatNo,
+                    mobileNumber: phonenumber,
                     category: category,
-                    cinemaAddress: cinemaAddress,
-                    date: dateBooked
+                    amountPaid:amount,
+                    cinema:`${cinema} ${cinemaAddress}`,
+                    date: dateBooked,
+                    ticketId:num
                 }
                 const form = new userModel(details)
                 form.save((err, saved) => {
@@ -144,7 +148,7 @@ const Payment = (req, res) => {
 
                         // use a template file with nodemailer
                         transporter.use('compile', hbs(handlebarOptions))
-                        const num = Date.now()
+                        
                         var mailOptions = {
                             from: '"Joanna" <ladyj2183@gmail.com>', // sender address
                             to: email, // list of receivers
@@ -170,7 +174,7 @@ const Payment = (req, res) => {
                             }
                             else if(info!==null) {
 
-                                res.send({ status: true, message: num, email:email })
+                                res.send({ status: true, message: num, email:email,response:"Ticket Generated" })
                                 console.log('Message sent: ' + info.response);
                                 //         res.send({message:"registration successful",status:true})
                             }

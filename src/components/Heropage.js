@@ -1,9 +1,9 @@
 import { Box } from '@mui/material'
-import React from 'react'
+import React,{useReact,useEffect} from 'react'
 import ImageSlider from './ImageSlider'
-
+import axios from 'axios'
 const Heropage = () => {
-
+   
     const slides = [
         {
             url: 'https://res.cloudinary.com/tila09/image/upload/v1656576681/gbpodctajun7sjrqrp2q.jpg',

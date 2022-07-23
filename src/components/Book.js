@@ -38,8 +38,8 @@ const Book = () => {
         }
         axios.post(url,object).then((res)=>{
             if (res.data.status){
-                alert(res.data.message)
                 var obj={
+                    cinemaAddress:location.state.cinemaAddress,
                     cinema:location.state.cinema,
                     time:location.state.time,
                     fullname:fullname,

@@ -28,7 +28,7 @@ const Footer = () => {
 
         <div className="text-center text-white p-3" style={{backgroundColor:"rgba(0, 0, 0, 0.9)"}}>
             © 2022 Copyright:
-            <a className="text-white" href="#" style={{textDecoration:"none"}}>Ava Cinema</a>
+            <a className="text-white" href="#" style={{textDecoration:"none"}}>Ava Bookings</a>
         </div>
         {/* <!-- Copyright --> */}
         </footer>

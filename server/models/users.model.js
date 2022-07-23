@@ -34,9 +34,15 @@ const userSchema = mongoose.Schema({
         default:Date.now
 
     },
-    package:{
+    image:{
         require:true,
         type:String,
+
+    },
+    ticketId:{
+        require:true,
+        type:Number,
+
     }
 
 

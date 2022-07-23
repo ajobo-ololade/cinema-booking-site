@@ -1,10 +1,11 @@
 import React, { useState,useRef } from 'react'
 import Success from './Success'
 import { PaystackButton } from "react-paystack"
-import {useNavigate,useLocation} from 'react-router-dom'
+import {useNavigate,useLocation, Navigate} from 'react-router-dom'
 import axios from 'axios'
 
 const Idconfirm = () => {
+    const navigate=Navigate()
     const publicKey = "pk_test_840ddcce8233c2f6cba3e456d5c832cf541fedc0"
     const url="http://localhost:6005/sendticket"
     const location=useLocation()
@@ -18,6 +19,11 @@ const Idconfirm = () => {
     var name=location.state.fullname
     var phone=phonenumber
     var amount=250000
+    let newDate = new Date();
+    let year = newDate.getFullYear();
+    let month = newDate.getMonth() + 1;
+    let d = newDate.getDay();
+    var date=month + '/' + d + '/' + year;
     console.log(location.state) 
     const obj=location.state
     const componentProps = {
@@ -30,29 +36,38 @@ const Idconfirm = () => {
             publicKey,
             text: "Pay Now",
             onSuccess: () =>
-                axios.post(url,obj).then((res)=>{
+
+                axios.post(url,{obj,phonenumber:phonenumber,amount:amount,date:date}).then((res)=>{
                     console.log(res)
+                    if(res.data.status){
+                        alert(res.data.response)
+                        navigate("/", {})
+                    }
+                    else{
+                        alert('An error occured please try again')
+                        navigate("/", {})
+                    }
                 }),
             // alert("Thanks for doing business with us! Come back soon!!"),
             onClose: () => alert("Wait! Don't leave :("),
         }
-    const payNow=()=>{
-        // data-bs-toggle="modal" data-bs-target="#exampleModal02"
-       
-        if(uniqueID=="" ||phonenumber==""){
-            alert("you are yet to fill the id and your number")
-        }
-        else if(uniqueID==location.state.token && phonenumber!=""){
-              setind(0)
-                        
-            } 
-                            
-            else{
-                alert('incorrect token submitted')
-            }
-            
+        const payNow=()=>{
+            // data-bs-toggle="modal" data-bs-target="#exampleModal02"
         
-    }
+            if(uniqueID=="" ||phonenumber==""){
+                alert("you are yet to fill the id and your number")
+            }
+            else if(uniqueID==location.state.token && phonenumber!=""){
+                setind(0)
+                            
+                } 
+                                
+                else{
+                    alert('incorrect token submitted')
+                }
+                
+            
+        }
 
   return (
     <>  
