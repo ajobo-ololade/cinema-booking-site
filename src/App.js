@@ -12,12 +12,14 @@ import Test from './components/Test';
 // import BookTicket from './components/BookTicket';
  import Book from './components/Book';
 import Idconfirm from './components/Idconfirm';
+import SignIn from "./components/SignIn";
 
 function App() {
   return (
     <>
     <Routes>
     <Route path="/" element={<LandingPage/>}/>
+    <Route path="/sign" element={<SignIn/>}/>
     <Route path="/preview" element={<PreviewPage/>}/>
     <Route path='/book' element={<Book/>} />
     <Route path='/payment' element={<Idconfirm/>} />

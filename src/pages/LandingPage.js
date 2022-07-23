@@ -10,8 +10,8 @@ const LandingPage = () => {
    <>
    <LandingpageNav/>
     <Heropage />
-    {/* <Featured />
-    <PopularMovies/> */}
+    <Featured />
+    <PopularMovies/> 
    </>
   )
 }
