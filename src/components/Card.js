@@ -6,7 +6,7 @@ import 'react-slideshow-image/dist/styles.css'
 import axios from 'axios'
 // import Card from './Card';
 
-const Card = ({url1}) => {
+const Card = ({url2}) => {
     const properties = {
         duration: 3000,
         slidesToShow: 1,
@@ -14,7 +14,9 @@ const Card = ({url1}) => {
         autoplay: false,
     };
     //const [num, setnum] = useState(0)
+
     const [allMovies, setallMovies] = useState([])
+    const [pixs, setpixs] = useState({})
     const [error, seterror] = useState("")
     // const url = url1;
     // "https://imdb-api.com/API/AdvancedSearch/k_s7l8kj1r/?genres=action,adventure"
@@ -32,7 +34,7 @@ const Card = ({url1}) => {
     }, [])
 
     const makeRequest = () => {
-        axios.get(url1).then((res) => {
+        axios.get(url2).then((res) => {
             if (res.status === 200) {
 
 
@@ -61,6 +63,7 @@ const Card = ({url1}) => {
                 <Grid container>
                     <Grid item xs={12} sm={12}> 
                     <Slide
+                    // https://imdb-api.com/en/API/Images/k_d6a0lkoi/tt10954984
                              {...properties}
                              style={{width:"300px",backgroundColor:"red"}}
                                 >
@@ -68,12 +71,23 @@ const Card = ({url1}) => {
                            
                                 {allMovies.slice(0,6).map((movie) => (
                                     <Grid
-                                    style={{
-                                        textAlign:'left',
-                                        padding: '0px 0',
-                                        fontSize: '30%',
-                                     }} item xs={6} sm={3.5} lg={1.8} className="card" >
-                                        <Box sx={{ width: '100%', height: '40vh', backgroundImage: `url(${movie.image})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} />
+                                    item xs={6} sm={3.5} lg={1.8} className="cards" >
+                                        <Box sx={{ width: '100%', height: '40vh', backgroundImage: `url(${url2=="https://imdb-api.com/en/API/ComingSoon/k_d6a0lkoi"?
+                                        // `https://imdb-api.com/en/API/Images/k_d6a0lkoi/${movie.id}`
+                                        axios.get("https://imdb-api.com/en/API/Images/k_d6a0lkoi/${movie.id}").then((res) => {
+                                            if (res.status === 200) {
+                                
+                                                setpixs(res.data.items)
+                                                console.log(res.data)
+                                                
+                                
+                                            }
+                                            else {
+                                                console.log("error ocurred")
+                                            }
+                                        })
+                                        : Objects.keys(pixs).length>0? pixs.image
+                                        :movie.image})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} />
                                         <Button variant='contained'  sx={{backgroundColor:"red"}} className='btn'>Preview</Button>
                                         <Typography variant="" color="initial" sx={{ mt: 1.5, color: 'white', fontWeight: "20px" }}>
                                             {movie.title}

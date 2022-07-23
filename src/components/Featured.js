@@ -31,10 +31,10 @@ const Featured = () => {
                                 </TabList>
                             </Box>
                             <TabPanel value="1">
-                                <Card url1={"https://imdb-api.com/en/API/MostPopularMovies/k_d6a0lkoi"}/>
+                                <Card url2={"https://imdb-api.com/en/API/MostPopularMovies/k_d6a0lkoi"}/>
                             </TabPanel>
-                            <TabPanel value="2"><Card url2={"https://imdb-api.com/en/API/MostPopularMovies/k_d6a0lkoi"}/></TabPanel>
-                            <TabPanel value="3"><Card url3={"https://imdb-api.com/en/API/MostPopularMovies/k_d6a0lkoi"} /></TabPanel>
+                            <TabPanel value="2"><Card url2={"https://imdb-api.com/en/API/ComingSoon/k_d6a0lkoi"}/></TabPanel>
+                            <TabPanel value="3"><Card url2={"https://imdb-api.com/en/API/InTheaters/k_d6a0lkoi"} /></TabPanel>
                         </TabContext>
                     </Box>
                 </Grid>

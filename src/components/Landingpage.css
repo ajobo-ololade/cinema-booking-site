@@ -14,19 +14,19 @@
       black, rgb(29,39,31)
     );
 }
-.card{
+.cards{
   
     position: relative;  
-    width:100%;
-    max-width:100px;
+    /* width:100%;
+    max-width:100px; */
    
-    border: 2px solid black;
+    /* border: 2px solid black; */
   
     align-items: center;
     justify-content: center;
   
 }
-.card:before{
+.cards:before{
   content:"";
   position:absolute;
   width:100%;
@@ -34,7 +34,7 @@
   top:0;left:0;right:0;
   background-color:rgba(0,0,0,0);
 }
-.card:hover::before{
+.cards:hover::before{
   background-color:rgba(69, 69, 69, 0.5);
 }
 .btn{
@@ -53,6 +53,6 @@
   background-color: red;
   opacity:1;  
 }
-.card:hover .btn {
+.cards:hover .btn {
   opacity: 1;
 }
