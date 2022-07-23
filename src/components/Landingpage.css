@@ -2,3 +2,71 @@
 .typo{
     font-family: 'Orbitron', sans-serif;
 }
+.tee{
+    background: rgba(0,0,0,0.5);
+    background-image:
+    linear-gradient(
+      to right, 
+      /* #fffdc2,
+      #fffdc2 15%,
+      #d7f0a2 15%,
+      #d7f0a2 85%,
+      #fffdc2 85% */
+      /* black, rgb(29,39,31) */
+    );
+}
+.cards{
+  
+    position: relative;  
+    /* width:100%;
+    max-width:100px; */
+   
+    /* border: 2px solid black; */
+  
+    align-items: center;
+    justify-content: center;
+  
+}
+.cards:before{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;left:0;right:0;
+  background-color:rgba(0,0,0,0);
+}
+.cards:hover::before{
+  background-color:rgba(69, 69, 69, 0.5);
+}
+.btn{
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  position: relative;
+  padding: 0 40px;
+  top:-80px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 260px;
+  cursor: pointer;
+  z-index: 3;
+}
+.btn:hover{
+  background-color: red;
+  opacity:1;  
+}
+.cards:hover .btn {
+  opacity: 1;
+}
+/* .overlay{
+    background-image:
+    linear-gradient(
+      to right, 
+      #fffdc2,
+      #fffdc2 15%,
+      #d7f0a2 15%,
+      #d7f0a2 85%,
+      #fffdc2 85%
+      black, rgb(29,39,31)
+    ); 
+    background: linear-gradient(to right, black, rgb(29,39,31) 2%);
+} */
