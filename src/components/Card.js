@@ -15,20 +15,12 @@ const Card = ({ url2 }) => {
         autoplay: false,
     };
     const navigate = useNavigate();
-    //const [num, setnum] = useState(0)
-
+    
     const [allMovies, setallMovies] = useState([])
     const [pixs, setpixs] = useState({})
     const [error, seterror] = useState("")
     const previewID = useRef({})
-    // const url = url1;
-    // "https://imdb-api.com/API/AdvancedSearch/k_s7l8kj1r/?genres=action,adventure"
-    //   
-    //   "https://imdb-api.com/en/API/MostPopularMovies/k_lv17lnyd"
-    // "https://imdb-api.com/en/API/FullCast/k_lv17lnyd/tt1375666"
-    // "https://imdb-api.com/en/API/Top250Movies/k_d6a0lkoi"
-    // "http://www.omdbapi.com/?i=tt3896198&apikey=c7e3c7b8"
-    // "https://imdb-api.com/en/API/Top250Movies/k_lv17lnyd"
+    
     const [isloading, setisloading] = useState(true)
 
     useEffect(() => {
@@ -53,22 +45,7 @@ const Card = ({ url2 }) => {
             seterror(err)
         })
     }
-    // url2=="https://imdb-api.com/en/API/ComingSoon/k_lv17lnyd"?
-    // `https://imdb-api.com/en/API/Images/k_d6a0lkoi/${movie.id}`
-    // axios.get("https://imdb-api.com/en/API/Images/k_lv17lnyd/${movie.id}").then((res) => {
-    //     if (res.status === 200) {
-
-    //         setpixs(res.data.items)
-    //         console.log(res.data)
-
-
-    //     }
-    //     else {
-    //         console.log("error ocurred")
-    //     }
-    // })
-    // : pixs? pixs.image
-    // :
+    
     const [url1, seturl1] = useState('https://res.cloudinary.com/tila09/image/upload/v1656576681/gbpodctajun7sjrqrp2q.jpg')
 
     const preview = (index) => {

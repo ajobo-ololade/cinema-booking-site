@@ -8,7 +8,7 @@ const PopularMovies = () => {
     const [allMovies, setallMovies] = useState([])
     const [error, seterror] = useState("")
     const [pixs, setpixs] = useState({})
-    const url2 = "https://imdb-api.com/en/API/MostPopularMovies/k_qlhee3nc"
+    const url2 = "https://imdb-api.com/en/API/MostPopularMovies/k_ak9k9uvj "
     useEffect(() => {
         console.log("yoyoyo")
         makeRequest()

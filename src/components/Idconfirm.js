@@ -1,15 +1,15 @@
-import React, { useState,useRef } from 'react'
+import React, { useState,} from 'react'
 import Success from './Success'
 import { PaystackButton } from "react-paystack"
 import {useNavigate,useLocation, Navigate} from 'react-router-dom'
 import axios from 'axios'
 
 const Idconfirm = () => {
-    const navigate=Navigate()
+    const navigate=useNavigate()
     const publicKey = "pk_test_840ddcce8233c2f6cba3e456d5c832cf541fedc0"
     const url="http://localhost:6005/sendticket"
     const location=useLocation()
-    const paid = useRef(null)
+    // const paid = useRef(null)
     const [uniqueID, setuniqueID] = useState("")
     const [ind, setind] = useState(1)
     const [phonenumber, setphonenumber] = useState("")
@@ -122,7 +122,7 @@ const Idconfirm = () => {
                             <div class="modal-footer">
                                 <button type="button" className={ind==1?"btn btn-danger":"d-none"}onClick={()=>payNow()}  >Review</button>
                                 
-                             <PaystackButton style={{display:"none"}} className={ind==1?"d-none":"btn btn-success"}   ref={paid}  {...componentProps} >Pay Now</PaystackButton>
+                             <PaystackButton style={{display:"none"}} className={ind==1?"d-none":"btn btn-success"}   {...componentProps} >Pay Now</PaystackButton>
                             </div>
                             </div>
                         </div>

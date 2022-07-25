@@ -6,8 +6,8 @@ const PreviewComponent = ({id}) => {
     // alert(id)
     const [isloading, setisloading] = useState(true)
     const [isloading1, setisloading1] = useState(true)
-    const url=`https://imdb-api.com/en/API/Trailer/k_qlhee3nc/${id}`
-    const url1=`https://imdb-api.com/en/API/Title/k_qlhee3nc/${id}`
+    const url=`https://imdb-api.com/en/API/Trailer/k_ak9k9uvj/${id}`
+    const url1=`https://imdb-api.com/en/API/Title/k_ak9k9uvj /${id}`
     const [vid, setvid] = useState({})
     const [plot, setplot] = useState({})
     useEffect(() => {

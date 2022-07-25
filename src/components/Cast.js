@@ -4,7 +4,7 @@ import {useNavigate,Link} from 'react-router-dom'
 import axios from 'axios'
 const Cast = ({Crew,mt,id}) => {
     
-    const url1=`https://imdb-api.com/en/API/FullCast/k_qlhee3nc/${id}`
+    const url1=`https://imdb-api.com/en/API/FullCast/k_ak9k9uvj/${id}`
     const [info, setinfo] = useState({})
     const [isloading, setisloading] = useState(true)
     useEffect(() => {
